@@ -64,7 +64,14 @@ async def scheduler():
         await send_image()
         await asyncio.sleep(5400)  # Tempo entre envios (20 segundos para testes, mude para 5400 para 1h30min)
 
-print("Bot iniciado. Enviando uma imagem...")
+print("Bot iniciado. Enviando imagens a cada 10 segundos por 1 minuto...")
 
-asyncio.run(send_image())  # Envia apenas uma imagem por execução
+async def run_for_one_minute():
+    start_time = time.time()
+    while time.time() - start_time < 60:  # Roda por 1 minuto
+        await send_image()
+        await asyncio.sleep(10)  # Tempo entre envios (10 segundos)
+
+asyncio.run(run_for_one_minute())
+
 
