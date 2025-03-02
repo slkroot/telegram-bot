@@ -68,7 +68,7 @@ print("Bot iniciado. Enviando imagens a cada 10 segundos por 1 minuto...")
 
 async def run_for_one_minute():
     start_time = time.time()
-    while time.time() - start_time < 60:  # Roda por 1 minuto
+    while time.time() - start_time < 600:  # Roda por 1 minuto
         await send_image()
         await asyncio.sleep(10)  # Tempo entre envios (10 segundos)
 
