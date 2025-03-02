@@ -2,7 +2,7 @@ name: Run Telegram Bot
 
 on:
   schedule:
-    - cron: "*/90 * * * *"  # Roda a cada 90 minutos (1h30)
+    - cron: "* * * * *"  # Executa a cada minuto (GitHub Actions não aceita menos que 1 min)
   workflow_dispatch:  # Permite rodar manualmente pelo GitHub Actions
 
 jobs:
