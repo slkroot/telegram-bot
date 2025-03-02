@@ -25,4 +25,4 @@ jobs:
       - name: Executar bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        run: python bot.py
+        run: python root.py
